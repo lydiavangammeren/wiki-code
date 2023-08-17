@@ -1,48 +1,44 @@
- "use client";
-
+import Grid from "@mui/material/Grid";
+import Link from 'next/link';
+import Button from '../app/components/Button';
+import Banner from "../app/components/Banner";
 
 export const metadata = {
-  title: 'Wiki Code',
-}
-import Link from 'next/link';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import About from "../pages/About";
-// import Layout from "../app/layouts/Layout";
-//import Home from "../pages/Home";
-// import Contact from "../pages/Contact";
-// import Articles from "../pages/Articles"
-// import SearchForm from "../pages/SearchForm";
-// import SignUpForm from "../pages/SignUpForm";
-// import Author from "../pages/Author";
-// import WriteArticle from "../pages/WriteArticle";
+  title: "Wiki Code",
+};
 
 export default function App() {
   return (
-    // <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    //   <BrowserRouter>
-    //     <Layout>
-    //       <Routes>
-    //         <Route path="about" element={<About/>} />
-    //         <Route path="/contact" element={<Contact/>} />
-    //         <Route path="search" element={<SearchForm/>} />
-    //         <Route path="signup" element={<SignUpForm/>} />
-    //         <Route path="articles" element={<Articles/>} />
-    //         <Route path="author" element={<Author/>}/>
-    //         <Route path="writearticle" element={<WriteArticle/>}/>
-    //         <Route index element={<Home />} />
-
-    //       </Routes>
-    //     </Layout>
-    //   </BrowserRouter>
-
-    // </main>
     <>
-     
-
-     <h1 className="title">
-  Read <Link href="/dashboard">this page!</Link>
+    <h1 className="title">
+  Read <Link href="/about">this page!</Link>
 </h1>
-
+      <Banner
+        title="Wiki Code"
+        caption="Write your own code reference book"
+        content="Create and update useful code examples together with your colleagues"
+      />
+      <Grid container justifyContent="center">
+        <Link href="/about">
+          <Button
+            sx={{
+              m: 2,
+              color: "white",
+              backgroundColor: "#169db3",
+              borderColor: "green",
+            }}
+            buttonText={"SEARCH BY TAG OR AUTHOR"}
+            bgColor="#169db3"
+          />
+        </Link>
+        {/* <ButtonGroup buttonText1={"ABOUT"} link1={"/about"} buttonText2={"CONTACT"} link2={"/contact"}/>
+        <LoginForm />
+        <Link to="/signup">
+          <Grid container justifyContent="flex-end">
+            <Button buttonText={"SIGN UP"} />
+          </Grid>
+        </Link> */}
+      </Grid> 
     </>
   );
 }

@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom";
-import { Grid } from "@mui/material";
-import Button from "../app/components/Button";
-import LoginForm from "../app/components/LoginForm";
-import Banner from "../app/components/Banner";
-import ButtonGroup from "../app/components/ButtonGroup";
+// import { Link } from "react-router-dom";
+// import { Grid } from "@mui/material";
+// import Button from "../app/components/Button";
+// import LoginForm from "../app/components/LoginForm";
+// import Banner from "../app/components/Banner";
+// import ButtonGroup from "../app/components/ButtonGroup";
 
 export default function Home() {
   return (
     <>
-      <Banner
+      <>
+        <h1>Home</h1>
+      </>
+      {/* <Banner
         title="Wiki Code"
         caption="Write your own code reference book"
         content="Create and update useful code examples together with your colleagues"
-      />
-      <Grid container justifyContent="center">
+      /> */}
+      {/* <Grid container justifyContent="center">
         <Link to="/search">
           <Button
             sx={{
@@ -33,7 +36,7 @@ export default function Home() {
             <Button buttonText={"SIGN UP"} />
           </Grid>
         </Link>
-      </Grid>
+      </Grid> */}
     </>
   );
 }

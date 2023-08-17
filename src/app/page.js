@@ -1,14 +1,14 @@
-// "use client";
+ "use client";
 
 
 export const metadata = {
   title: 'Wiki Code',
 }
-
+import Link from 'next/link';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import About from "../pages/About";
 // import Layout from "../app/layouts/Layout";
-// import Home from "../pages/Home";
+//import Home from "../pages/Home";
 // import Contact from "../pages/Contact";
 // import Articles from "../pages/Articles"
 // import SearchForm from "../pages/SearchForm";
@@ -39,7 +39,10 @@ export default function App() {
     <>
      
 
-      <h1>Hi!</h1>
+     <h1 className="title">
+  Read <Link href="/dashboard">this page!</Link>
+</h1>
+
     </>
   );
 }

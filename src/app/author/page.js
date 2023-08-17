@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import Banner from "../app/components/Banner";
-import Button from "../app/components/Button";
-import Article from "../app/components/Article";
-import ButtonGroup from "../app/components/ButtonGroup";
+import Link from 'next/link';
+import Banner from "../components/Banner";
+import Button from "../components/Button";
+import Article from "../components/Article";
+import ButtonGroup from "../components/ButtonGroup";
 
 export default function Author() {
   return (
     <>
       <Banner title={"USER NAME"} />
-      <Link to="/writearticle">
+      <Link href="/writearticle">
         <Button buttonText={"Add new article"} />
       </Link>
 

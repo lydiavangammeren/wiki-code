@@ -1,5 +1,5 @@
 import * as React from "react";
-// import { Link } from "react-router-dom";
+import Link from 'next/link';
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import CodeIcon from "@mui/icons-material/Code";
 
 const pages = ["about", "contact", "signup"];
-const settings = ["Author", "Logout"];
+const settings = ["author", "logout"];
 
 export default function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -97,9 +97,9 @@ export default function ResponsiveAppBar() {
               {pages.map((page) => (
                 
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    {/* <Link  to={page}> */}
+                     <Link href={page}> 
                     <Typography textAlign="center">{page}</Typography>
-                    {/* </Link> */}
+                     </Link> 
                   </MenuItem>
               
               ))}
@@ -125,16 +125,16 @@ export default function ResponsiveAppBar() {
             WIKI CODE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map((page) => (
-              <Link key={page} to={page}>
+             {pages.map((page) => (
+              <Link key={page} href={page}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page}
                 </Button>
-              </Link> */}
-            {/* ))} */}
+              </Link> 
+             ))} 
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -161,9 +161,9 @@ export default function ResponsiveAppBar() {
             >
               {settings.map((setting) => (                
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    {/* <Link  to={setting}> */}
+                    <Link href={setting}> 
                     <Typography textAlign="center">{setting}</Typography>
-                    {/* </Link> */}
+                     </Link> 
                   </MenuItem>               
               ))}
             </Menu>

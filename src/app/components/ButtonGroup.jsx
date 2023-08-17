@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { Grid } from "@mui/material";
 import Button from "../components/Button";
 
@@ -7,10 +7,10 @@ export default function ButtonGroup ({ buttonText1, link1, buttonText2, link2 })
         <>
         <Grid container justifyContent="center">
       <span>
-        <Link to={link1}>
+      <Link href={link1}>
           <Button buttonText={buttonText1} />
         </Link>
-        <Link to={link2}>
+        <Link href={link2}>
           <Button buttonText={buttonText2} />
         </Link>
       </span>

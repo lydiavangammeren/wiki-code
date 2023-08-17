@@ -1,5 +1,5 @@
-import Banner from "../app/components/Banner";
-import Form from "../app/components/Form";
+import Banner from "../components/Banner";
+import Form from "../components/Form";
 // import ButtonGroup from "../app/components/ButtonGroup";
 
 export default function SearchForm() {

@@ -1,8 +1,8 @@
 import { TextField} from "@mui/material";
 import { Textarea } from '@mui/joy';
-import Banner from "../app/components/Banner";
-import Form from "../app/components/Form";
-import ButtonGroup from "../app/components/ButtonGroup";
+import Banner from "../components/Banner";
+import Form from "../components/Form";
+import ButtonGroup from "../components/ButtonGroup";
 
 export default function Contact() {
   return (

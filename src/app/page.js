@@ -1,7 +1,9 @@
-import Grid from "@mui/material/Grid";
 import Link from 'next/link';
+import Grid from "@mui/material/Grid";
+import LoginForm from "../app/components/LoginForm"
 import Button from '../app/components/Button';
 import Banner from "../app/components/Banner";
+import ButtonGroup from "../app/components/ButtonGroup";
 
 export const metadata = {
   title: "Wiki Code",
@@ -10,16 +12,14 @@ export const metadata = {
 export default function App() {
   return (
     <>
-    <h1 className="title">
-  Read <Link href="/about">this page!</Link>
-</h1>
+ 
       <Banner
         title="Wiki Code"
         caption="Write your own code reference book"
         content="Create and update useful code examples together with your colleagues"
       />
       <Grid container justifyContent="center">
-        <Link href="/about">
+        <Link href="/search">
           <Button
             sx={{
               m: 2,
@@ -31,13 +31,13 @@ export default function App() {
             bgColor="#169db3"
           />
         </Link>
-        {/* <ButtonGroup buttonText1={"ABOUT"} link1={"/about"} buttonText2={"CONTACT"} link2={"/contact"}/>
+        <ButtonGroup buttonText1={"ABOUT"} link1={"/about"} buttonText2={"CONTACT"} link2={"/contact"}/>
         <LoginForm />
-        <Link to="/signup">
+        <Link href="/signup">
           <Grid container justifyContent="flex-end">
             <Button buttonText={"SIGN UP"} />
           </Grid>
-        </Link> */}
+        </Link>  
       </Grid> 
     </>
   );

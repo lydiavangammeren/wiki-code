@@ -1,7 +1,7 @@
-import Banner from "../app/components/Banner";
-import ButtonGroup from "../app/components/ButtonGroup";
-import Form from "../app/components/Form";
-import SimplePopper from "../app/components/SimplePopper";
+import Banner from "../components/Banner";
+import ButtonGroup from "../components/ButtonGroup";
+import Form from "../components/Form";
+import SimplePopper from "../components/SimplePopper";
 
 export default function WriteArticle() {
   return (

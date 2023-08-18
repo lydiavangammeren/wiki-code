@@ -1,6 +1,7 @@
+import { FormGroup, FormControlLabel, Checkbox } from '@mui/material';
 import Banner from "../components/Banner";
 import Form from "../components/Form";
-// import ButtonGroup from "../app/components/ButtonGroup";
+import ButtonGroup from "../components/ButtonGroup";
 
 export default function SearchForm() {
   return (
@@ -16,6 +17,12 @@ export default function SearchForm() {
           <option value="author3">Author 3</option>
           <option value="author4">Author 4</option>
         </select>
+        <br/>
+        <FormGroup>
+  <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+  <FormControlLabel required control={<Checkbox />} label="Required" />
+  <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+</FormGroup>
         <br />
         <input type="checkbox" id="language1" name="language1" value="Java" />
         <label for="language1">Java</label>
@@ -32,12 +39,12 @@ export default function SearchForm() {
         <label for="language3">React</label>
         <br />
       </Form>
-      {/* <ButtonGroup
+      <ButtonGroup
         buttonText1={"HOME"}
         link1={"/"}
         buttonText2={"CONTACT"}
         link2={"/contact"}
-      /> */}
+      />
     </>
   );
 }

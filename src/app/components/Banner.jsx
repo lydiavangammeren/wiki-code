@@ -5,13 +5,14 @@ export default function Banner({ title, caption, content }) {
   return (
     <>
       <Grid        
-        container
-        minHeight={300}
+        container 
+        minHeight={100}       
+        maxHeight={400}
         justifyContent="center"
         alignItems="center"
         direction="column"
         sx={{
-          m: 2,
+          // m: 2,
           color: "white",
           backgroundColor: "#169db3",
           borderColor: "green",

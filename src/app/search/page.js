@@ -1,43 +1,48 @@
-import { FormGroup, FormControlLabel, Checkbox } from '@mui/material';
+import {
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  FormHelperText,
+} from "@mui/material";
 import Banner from "../components/Banner";
 import Form from "../components/Form";
 import ButtonGroup from "../components/ButtonGroup";
 
 export default function SearchForm() {
+  function handleChange() {}
   return (
     <>
       <Banner title={"Search"} />
       <Form toolBarText={"Search by author and/or tags"}>
-        <select name="author" id="author">
-          <option value="all" selected>
-            All
-          </option>
-          <option value="author1">Author 1</option>
-          <option value="author2">Author 2</option>
-          <option value="author3">Author 3</option>
-          <option value="author4">Author 4</option>
-        </select>
-        <br/>
-        <FormGroup>
-  <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-  <FormControlLabel required control={<Checkbox />} label="Required" />
-  <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
-</FormGroup>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="author">Author</InputLabel>
+          <Select
+            labelId="author"
+            id="author"
+            value={"author"}
+            label="author"
+            // onChange={handleChange}
+          >
+            <MenuItem value="">
+              <em>All</em>
+            </MenuItem>
+            <MenuItem value={"Author 1"}>Author 1</MenuItem>
+            <MenuItem value={"Author 2"}>Author 2</MenuItem>
+            <MenuItem value={"Author 3"}>Author 3</MenuItem>
+          </Select>
+          <FormHelperText>Choose all authors or pick one</FormHelperText>
+        </FormControl>
+
         <br />
-        <input type="checkbox" id="language1" name="language1" value="Java" />
-        <label for="language1">Java</label>
-        <br />
-        <input
-          type="checkbox"
-          id="language2"
-          name="language2"
-          value="JavaScript"
-        />
-        <label for="language2">JavaScript</label>
-        <br />
-        <input type="checkbox" id="language3" name="language3" value="React" />
-        <label for="language3">React</label>
-        <br />
+        <FormGroup sx={{ display: "inline" }}>
+          <FormControlLabel control={<Checkbox />} label="Java" />
+          <FormControlLabel control={<Checkbox />} label="React" />
+          <FormControlLabel control={<Checkbox />} label="JavaScript" />
+        </FormGroup>
       </Form>
       <ButtonGroup
         buttonText1={"HOME"}

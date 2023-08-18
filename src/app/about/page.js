@@ -5,7 +5,6 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
 import ButtonGroup from "../components/ButtonGroup";
 import Banner from "../components/Banner";
 
@@ -30,33 +29,11 @@ export default function About() {
         <nav aria-label="main mailbox folders">
           <List>
             {contributors.map((contributor, index) => {
-              return <ListItem1 key={index} name={contributor}/>;
+              return <ListItem1 key={index} name={contributor} />;
             })}
           </List>
         </nav>
       </Box>
-      {/* <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        <nav aria-label="main mailbox folders">
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <DraftsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Drafts" />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </nav>
-      </Box> */}
       <ButtonGroup
         buttonText1={"HOME"}
         link1={"/"}
@@ -75,7 +52,7 @@ const contributors = [
   "Author 5",
 ];
 
-function ListItem1({name}) {
+function ListItem1({ name }) {
   return (
     <>
       <ListItem disablePadding>

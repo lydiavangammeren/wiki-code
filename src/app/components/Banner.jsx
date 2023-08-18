@@ -12,17 +12,17 @@ export default function Banner({ title, caption, content }) {
         alignItems="center"
         direction="column"
         sx={{
-          // m: 2,
+          p: 2,
           color: "white",
           backgroundColor: "#169db3",
           borderColor: "green",
         }}
       >
         <Grid item xs={12}>
-          <Item>{title}</Item>
+          <Item><h1>{title}</h1></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>{caption}</Item>
+          <Item><h2>{caption}</h2></Item>
         </Grid>
         <Grid item xs={4}>
           <Item>{content}</Item>

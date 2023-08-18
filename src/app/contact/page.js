@@ -1,5 +1,5 @@
-import { TextField} from "@mui/material";
-import { Textarea } from '@mui/joy';
+import { TextField, Paper, Container } from "@mui/material";
+import { Textarea } from "@mui/joy";
 import Banner from "../components/Banner";
 import Form from "../components/Form";
 import ButtonGroup from "../components/ButtonGroup";
@@ -13,7 +13,6 @@ export default function Contact() {
           "We love questions and feedback – and we're always happy to help! Here are some ways to contact us."
         }
       />
-      <h1>Send us a message</h1>
       <Form
         toolBarText={"Send us a message and we'll respond within 24 hours."}
       >
@@ -53,7 +52,7 @@ export default function Contact() {
           // value={address}
           // onChange={(e) => setAddress(e.target.value)}
         />
-        <br/>
+        <br />
         <Textarea
           id="outlined-basic"
           label="Message"
@@ -65,10 +64,14 @@ export default function Contact() {
           // value={address}
           // onChange={(e) => setAddress(e.target.value)}
         />
-      </Form>      
-      <h2>Contact information</h2>
-      <p>contact-us@wikicode.com</p> {/*TO DO: email icon */}
-      <p>06 12345678</p> {/* TO DO: phone icon */}
+      </Form>
+      <Container sx={{ justifyContent: "center", alignContent: "center" }}>
+        <Paper elevation={2} sx={{ m: 2, p: 4 }}>
+          <h2>Contact information</h2>
+          <p>contact-us@wikicode.com</p> {/*TO DO: email icon */}
+          <p>06 12345678</p> {/* TO DO: phone icon */}
+        </Paper>
+      </Container>
       <ButtonGroup
         buttonText1={"HOME"}
         link1={"/"}

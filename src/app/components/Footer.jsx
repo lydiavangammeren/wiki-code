@@ -9,9 +9,9 @@ export default function Footer() {
     <Container container sx={{display: "flex", flexDirection: 'column', alignItems: 'center', justifyContent: "center"}}>
       <CodeIcon/>
       <Typography variant="body2" color="text.secondary">
-        {"Copyright © "}
+        <span>{"Copyright"} &copy;  </span>
         <Link color="inherit" href="/">
-          Wiki Code
+            Wiki Code
         </Link>{" "}
         {new Date().getFullYear()}
         {"."}

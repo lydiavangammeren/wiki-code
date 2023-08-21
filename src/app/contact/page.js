@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import Form from "../components/Form";
 import ButtonGroup from "../components/ButtonGroup";
 
+
 export default function Contact() {
   return (
     <>

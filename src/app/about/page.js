@@ -4,7 +4,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/Inbox";
+import Avatar from "@mui/material/Avatar"
+import Paper from "@mui/material/Paper"
 import ButtonGroup from "../components/ButtonGroup";
 import Banner from "../components/Banner";
 
@@ -12,6 +13,7 @@ export default function About() {
   return (
     <>
       <Banner title={"ABOUT"} />
+      <Paper sx={{m: 2, p: 2}}>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam
         velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate
@@ -25,6 +27,8 @@ export default function About() {
         ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare
         accumsan, blandit sed diam.
       </p>
+      </Paper>
+      
       <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <nav aria-label="main mailbox folders">
           <List>
@@ -46,7 +50,7 @@ export default function About() {
 
 const contributors = [
   "Author 1",
-  "Author 1",
+  "Author 2",
   "Author 3",
   "Author 4",
   "Author 5",
@@ -58,7 +62,7 @@ function ListItem1({ name }) {
       <ListItem disablePadding>
         <ListItemButton>
           <ListItemIcon>
-            <InboxIcon />
+          <Avatar alt="user avatar" src="/images/user.png" />
           </ListItemIcon>
           <ListItemText primary={name} />
         </ListItemButton>

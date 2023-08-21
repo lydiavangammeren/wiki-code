@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Banner from "../components/Banner";
 import Button from "../components/Button";
-import Article2 from "../components/Article2";
+import Article from "../components/Article";
 import ButtonGroup from "../components/ButtonGroup";
 
 export default function Author() {
@@ -12,8 +12,8 @@ export default function Author() {
         <Button buttonText={"Add new article"} />
       </Link>
 
-      <Article2 />
-      <Article2 />
+      <Article />
+      <Article />
       <ButtonGroup
         buttonText1={"HOME"}
         link1={"/"}

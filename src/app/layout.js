@@ -1,6 +1,11 @@
-"use client";
+// "use client";
+import Head from 'next/head'
 import Footer from "./components/Footer";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
+
+export const metadata = {
+  title: "Wiki Code",
+};
 
 export default function RootLayout({
   children, // will be a page or nested layout
@@ -8,12 +13,12 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-      
       <body>  
-      <ResponsiveAppBar />
+      
+         <ResponsiveAppBar />  
+     
       <div style={{ minHeight: "800px" }}>{children}</div>
-      <Footer />
-      {/* <Outlet /> */}
+      <Footer />    
       </body>
       </html>
     </>

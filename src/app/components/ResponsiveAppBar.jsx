@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react";
 import Link from 'next/link';
 import AppBar from "@mui/material/AppBar";
@@ -97,7 +98,7 @@ export default function ResponsiveAppBar() {
               {pages.map((page) => (
                 
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                     <Link href={page}> 
+                     <Link href={page} style={{ textDecoration: 'none' }}> 
                     <Typography textAlign="center">{page}</Typography>
                      </Link> 
                   </MenuItem>
@@ -126,7 +127,7 @@ export default function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
              {pages.map((page) => (
-              <Link key={page} href={page}>
+              <Link key={page} href={page} style={{ textDecoration: 'none' }}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
@@ -161,9 +162,10 @@ export default function ResponsiveAppBar() {
             >
               {settings.map((setting) => (                
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Link href={setting}> 
+                     <Link href={setting} style={{ textDecoration: 'none', color: "black" }} >  
+
                     <Typography textAlign="center">{setting}</Typography>
-                     </Link> 
+                      </Link>  
                   </MenuItem>               
               ))}
             </Menu>

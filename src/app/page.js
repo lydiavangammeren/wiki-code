@@ -6,10 +6,9 @@ import Banner from "../app/components/Banner";
 import ButtonGroup from "../app/components/ButtonGroup";
 import "src/app/globals.css"
 
-export const metadata = {
-  title: "Wiki Code",
-};
-
+// export const metadata = {
+//   title: "Wiki Code",
+// };
 export default function App() {
   return (
     <>
@@ -17,7 +16,7 @@ export default function App() {
       <Banner
         title="Wiki Code"
         caption="Write your own code reference book"
-        content="Create and update useful code examples together with your colleagues"
+        content="Create and update useful code examples together"
       />
       <Grid container justifyContent="center">
         <Link href="/search">

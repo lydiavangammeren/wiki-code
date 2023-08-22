@@ -1,3 +1,5 @@
+import {TextField} from "@mui/material";
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import Banner from "../components/Banner";
 import ButtonGroup from "../components/ButtonGroup";
 import Form from "../components/Form";
@@ -8,15 +10,40 @@ export default function WriteArticle() {
     <>
       <Banner title={"Write a new Article"} />
       <Form>
-      <label for="title">Article title:</label>
-        <input id="title" name="title"></input>
-        <br />
-        <label for="message">Article content:</label>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea>
-        <br />
-        <label for="message">Code Example:</label>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea>
-        <br />
+      <TextField
+          id="outlined-basic"
+          aria-label="article title"
+          label="Article title"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          // value={name}
+          // onChange={(e) => setName(e.target.value)}
+        />
+        <TextField
+        multiline
+        minRows={5}
+          id="outlined-basic"
+          aria-label="article content"
+          label="Article content"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          // value={name}
+          // onChange={(e) => setName(e.target.value)}
+        />
+         <TextField
+        multiline
+        minRows={5}
+          id="outlined-basic"
+          aria-label="code example"
+          label="Code example"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          // value={name}
+          // onChange={(e) => setName(e.target.value)}
+        />            
         <h2>Tags:</h2>
         <input type="checkbox" id="language1" name="language1" value="Java" />
         <label for="language1">Java</label>

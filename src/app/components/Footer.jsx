@@ -6,7 +6,7 @@ import CodeIcon from "@mui/icons-material/Code";
 export default function Footer() {
   
   return (
-    <Container container sx={{display: "flex", flexDirection: 'column', alignItems: 'center', justifyContent: "center"}}>
+    <Container sx={{display: "flex", flexDirection: 'column', alignItems: 'center', justifyContent: "center"}}>
       <CodeIcon/>
       <Typography variant="body2" color="text.secondary">
         <span>{"Copyright"} &copy;  </span>

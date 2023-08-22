@@ -1,9 +1,9 @@
-import {TextField} from "@mui/material";
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import {TextField, FormGroup, FormControlLabel, Checkbox, Button} from "@mui/material";
 import Banner from "../components/Banner";
 import ButtonGroup from "../components/ButtonGroup";
 import Form from "../components/Form";
-import SimplePopper from "../components/SimplePopper";
+import SimpleDialog from "../components/SimpleDialog";
+
 
 export default function WriteArticle() {
   return (
@@ -45,31 +45,27 @@ export default function WriteArticle() {
           // onChange={(e) => setName(e.target.value)}
         />            
         <h2>Tags:</h2>
-        <input type="checkbox" id="language1" name="language1" value="Java" />
-        <label for="language1">Java</label>
-        <br />
-        <input
-          type="checkbox"
-          id="language2"
-          name="language2"
-          value="JavaScript"
-        />
-        <label for="language2">JavaScript</label>
-        <br />
-        <input type="checkbox" id="language3" name="language3" value="React" />
-        <label for="language3">React</label>
-        <br />
-        <label for="code-image">Upload an image:</label>
-
-        <input
-          type="file"
-          id="code-image"
+        <FormGroup fullWidth sx={{ display: "inline" }}>
+          <FormControlLabel control={<Checkbox />} label="Java" />
+          <FormControlLabel control={<Checkbox />} label="React" />
+          <FormControlLabel control={<Checkbox />} label="JavaScript" />
+        </FormGroup>
+        <br/>
+        <Button sx={{m: 1}}
+  variant="contained"
+  component="label"
+> 
+Upload image
+  <input
+    type="file"
+    id="code-image"
           name="code-image"
           accept="image/png, image/jpeg"
-        />
-        <br />  
-      </Form>
-      <SimplePopper title="Add a tag" buttonText="Add a new tag"></SimplePopper>      
+    hidden
+  />
+</Button>   
+      </Form>     
+      <SimpleDialog/>      
       <ButtonGroup
         buttonText1={"HOME"}
         link1={"/"}

@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from 'react';
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -10,6 +12,13 @@ import ButtonGroup from "../components/ButtonGroup";
 import Banner from "../components/Banner";
 
 export default function About() {
+
+  const [authors, setAuthors] = useState([]);
+
+  React.useEffect(() => {
+    fetch("http://localhost:8080/author/getAll").then(res => res.json()).then(data => {
+  setAuthors(data) })}, []);
+
   return (
     <>
       <Banner title={"ABOUT"} />
@@ -31,9 +40,10 @@ export default function About() {
       
       <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <nav aria-label="main mailbox folders">
+          <h1>Authors</h1>
           <List>
-            {contributors.map((contributor, index) => {
-              return <ListItem1 key={index} name={contributor} />;
+            {authors.map((author, index) => {
+              return <ListItem1 key={index} name={author.authorName} />;
             })}
           </List>
         </nav>
@@ -48,13 +58,6 @@ export default function About() {
   );
 }
 
-const contributors = [
-  "Author 1",
-  "Author 2",
-  "Author 3",
-  "Author 4",
-  "Author 5",
-];
 
 function ListItem1({ name }) {
   return (

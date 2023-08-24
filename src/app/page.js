@@ -6,9 +6,6 @@ import Banner from "../app/components/Banner";
 import ButtonGroup from "../app/components/ButtonGroup";
 import "src/app/globals.css"
 
-// export const metadata = {
-//   title: "Wiki Code",
-// };
 export default function App() {
   return (
     <>

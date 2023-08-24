@@ -1,12 +1,12 @@
 import { Toolbar, Container, Paper, Grid } from "@mui/material";
 import Button from "./Button";
 
-export default function Form({toolBarText, children}) {
+export default function Form({toolBarText, children, handleClick}) {
   
   return (
     <>
      <Grid container justifyContent="center">
-      <Grid xs={7}>
+      <Grid item xs={7}>
       <Paper elevation={3} sx={{ m: 2, p: 4, justifyContent: 'center'}}>
           <Toolbar>
           <h1>{toolBarText}</h1>
@@ -14,7 +14,7 @@ export default function Form({toolBarText, children}) {
           <form>
             {children}
             <Grid container justifyContent="flex-end">
-            <Button buttonText="SUBMIT" />
+            <Button onClick={handleClick} buttonText="SUBMIT" />
             </Grid>            
           </form>
         </Paper>

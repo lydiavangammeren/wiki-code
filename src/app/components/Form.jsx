@@ -14,7 +14,8 @@ export default function Form({toolBarText, children, handleClick}) {
           <form>
             {children}
             <Grid container justifyContent="flex-end">
-            <Button onClick={handleClick} buttonText="SUBMIT" />
+              {handleClick && <Button buttonText="SUBMIT" onClick={handleClick} />}
+            {/* <Button onClick={handleClick} buttonText="SUBMIT" /> */}
             </Grid>            
           </form>
         </Paper>

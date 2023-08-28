@@ -10,14 +10,16 @@ import Avatar from "@mui/material/Avatar"
 import Paper from "@mui/material/Paper"
 import ButtonGroup from "../components/ButtonGroup";
 import Banner from "../components/Banner";
+import {fetchWrapper} from "../helpers/fetch-wrapper";
 
 export default function About() {
 
   const [authors, setAuthors] = useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:8080/author/getAll").then(res => res.json()).then(data => {
-  setAuthors(data) })}, []);
+    fetchWrapper.get("http://localhost:8080/author/getAll").then(data => {
+  setAuthors(data)  
+ })}, []);
 
   return (
     <>

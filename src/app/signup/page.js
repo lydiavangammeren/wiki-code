@@ -6,6 +6,7 @@ import { TextField, FormHelperText } from "@mui/material";
 import Banner from "../components/Banner";
 import Form from "../components/Form";
 import ButtonGroup from "../components/ButtonGroup";
+import {fetchWrapper} from "../helpers/fetch-wrapper";
 
 export default function SignUpForm() {
   const [authorName, setAuthorname] = React.useState("");

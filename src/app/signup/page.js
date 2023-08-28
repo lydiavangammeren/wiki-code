@@ -51,11 +51,14 @@ const handlePasswordValidation = (e) => {
 
 const router = useRouter();
 useEffect(() => {
-  if (isSignedUp) {
-    router.push('/');
+  if (isSignedUp) {    
+    setTimeout(() => {
+      router.push('/');
+    }, 3000);
+    
 }
 }, [isSignedUp, router]);
-  // if (isSignedUp) {return <Form toolBarText={"You succesfully signed up for Wiki Code"}></Form>} else {
+  if (isSignedUp) {return <Form toolBarText={"You succesfully signed up for Wiki Code"}></Form>} else {
     return (
       <>
         <Banner
@@ -139,7 +142,7 @@ useEffect(() => {
           link2={"/contact"}
         />
       </>
-    );
+    );}
   }
   
 

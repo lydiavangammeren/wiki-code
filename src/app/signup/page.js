@@ -74,20 +74,15 @@ useEffect(() => {
             e.preventDefault;
             if (nameValid && emailValid && passwordValid) {
               const author = { authorName, email, password };
-              fetch("http://localhost:8080/author/add", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(author),
-              }).then(() => {
+              fetchWrapper.post("http://localhost:8080/author/add", author
+                ).then(() => {
                 console.log("new author added");
               });
               console.log(author);
               setSignedUp(true);
             }
-            else {
-              console.log("Form info not valid");
+            else {              
+              document.getElementById("forminvalid").innerHTML = "Form info not valid";
             }
           } 
   
@@ -135,6 +130,7 @@ useEffect(() => {
           {!passwordValid && (
             <FormHelperText>Password should be at least 8 characters and contain a lowerCase, an upperCase, a digit and a special character</FormHelperText>
           )}
+          <FormHelperText id="forminvalid"></FormHelperText>
         </Form>
         <ButtonGroup
           buttonText1={"HOME"}

@@ -47,8 +47,7 @@ useEffect(() => {
               fetchWrapper.post("http://localhost:8080/author/add", author
                 ).then(() => {
                 console.log("new author added");
-              });
-              console.log(author);
+              });              
               setSignedUp(true);
             }
             else {              

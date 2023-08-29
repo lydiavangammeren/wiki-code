@@ -11,6 +11,7 @@ import Paper from "@mui/material/Paper"
 import ButtonGroup from "../components/ButtonGroup";
 import Banner from "../components/Banner";
 import {fetchWrapper} from "../helpers/fetch-wrapper";
+import Spinner from "../components/Spinner";
 
 export default function About() {
 
@@ -43,11 +44,15 @@ export default function About() {
       <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <nav aria-label="main mailbox folders">
           <h1>Authors</h1>
+          
           <List>
+          {authors.length === 0 && <Spinner/>}
             {authors.map((author, index) => {
               return <ListItem1 key={index} name={author.authorName} />;
             })}
           </List>
+        
+          {/* <Spinner/> */}
         </nav>
       </Box>
       <ButtonGroup

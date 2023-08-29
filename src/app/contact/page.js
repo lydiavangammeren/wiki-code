@@ -1,11 +1,27 @@
-import { TextField, Paper, Container } from "@mui/material";
+"use client"
+import React from "react";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { TextField, Paper, Container, FormHelperText } from "@mui/material";
 import { Textarea } from "@mui/joy";
 import Banner from "../components/Banner";
 import Form from "../components/Form";
 import ButtonGroup from "../components/ButtonGroup";
-
+import {fetchWrapper} from "../helpers/fetch-wrapper";
 
 export default function Contact() {
+  const router = useRouter();
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [organization, setOrganization] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [nameValid, setNameValid] = React.useState(false);
+  const [emailValid, setEmailValid] = React.useState(false);
+  const [phoneValid, setPhoneValid] = React.useState(false);
+  const [messageValid, setMessageValid] = React.useState(false);
+  const [allValid, setAllValid] = React.useState(false);
+
   return (
     <>
       <Banner
@@ -15,7 +31,9 @@ export default function Contact() {
         }
       />
       <Form
+        buttonDisabled={!allValid}
         toolBarText={"Send us a message and we'll respond within 24 hours."}
+        handleClick={(e) => {}}
       >
         <TextField
           id="outlined-basic"

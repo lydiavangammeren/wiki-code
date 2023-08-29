@@ -7,6 +7,7 @@ import Banner from "../components/Banner";
 import Form from "../components/Form";
 import ButtonGroup from "../components/ButtonGroup";
 import {fetchWrapper} from "../helpers/fetch-wrapper";
+import {validations} from "../helpers/validations";
 
 export default function SignUpForm() {
   const [authorName, setAuthorname] = React.useState("");
@@ -16,39 +17,7 @@ export default function SignUpForm() {
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
   const [isSignedUp, setSignedUp] = React.useState(false);
-
-  const handleNameValidation = (e) => {
-    //set value to user input
-    setAuthorname(e.target.value);
-    
-    //define regex     
-    const reg = new RegExp("[a-z]");
-    
-    //test whether input is valid
-    setNameValid(reg.test(e.target.value));
-};
-
-const handleEmailValidation = (e) => {
-  //set value to user input
-  setEmail(e.target.value);
-  
-  //define regex     
-  const reg =  new RegExp(/^[^\s@]+@[^@\s\.]+\.[^\s@]{2,}$/, "i")
-  
-  //test whether input is valid
-  setEmailValid(reg.test(e.target.value));
-};
-
-const handlePasswordValidation = (e) => {
-  //set value to user input
-  setPassword(e.target.value);
-  
-  //define regex     
-  const reg = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/gm);
-  
-  //test whether input is valid
-  setPasswordValid(reg.test(e.target.value));
-};
+  const allValid = nameValid && emailValid && passwordValid; 
 
 const router = useRouter();
 useEffect(() => {
@@ -69,10 +38,11 @@ useEffect(() => {
           }
         />
         <Form
+        buttonDisabled={!allValid}
           toolBarText={"Enter your information"}
           handleClick={(e) => {
             e.preventDefault;
-            if (nameValid && emailValid && passwordValid) {
+            if (allValid) {
               const author = { authorName, email, password };
               fetchWrapper.post("http://localhost:8080/author/add", author
                 ).then(() => {
@@ -97,7 +67,7 @@ useEffect(() => {
             margin="normal"
             error={!nameValid}
             value={authorName}
-            onChange={(e) => handleNameValidation(e)}
+            onChange={(e) => validations.handleFormValidation(e, setAuthorname, setNameValid, "name")}
           />
           {!nameValid && (
             <FormHelperText>Username can only contain letters</FormHelperText>
@@ -111,7 +81,7 @@ useEffect(() => {
             margin="normal"
             error={!emailValid}
             value={email}
-            onChange={(e) => handleEmailValidation(e)}
+            onChange={(e) => validations.handleFormValidation(e, setEmail, setEmailValid, "email")}
           />
           {!emailValid && (
             <FormHelperText>Please enter a valid email address</FormHelperText>
@@ -125,7 +95,7 @@ useEffect(() => {
             margin="normal"
             error={!passwordValid}
             value={password}
-            onChange={(e) => handlePasswordValidation(e)}
+            onChange={(e) => validations.handleFormValidation(e, setPassword, setPasswordValid, "password")}
           />
           {!passwordValid && (
             <FormHelperText>Password should be at least 8 characters and contain a lowerCase, an upperCase, a digit and a special character</FormHelperText>

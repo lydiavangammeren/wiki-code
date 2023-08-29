@@ -1,7 +1,7 @@
 import { Toolbar, Container, Paper, Grid } from "@mui/material";
 import Button from "./Button";
 
-export default function Form({toolBarText, children, handleClick}) {
+export default function Form({toolBarText, children, handleClick, buttonDisabled}) {
   
   return (
     <>
@@ -14,9 +14,8 @@ export default function Form({toolBarText, children, handleClick}) {
           <form>
             {children}
             <Grid container justifyContent="flex-end">
-              {handleClick && <Button buttonText="SUBMIT" onClick={handleClick} />}
-            {/* <Button onClick={handleClick} buttonText="SUBMIT" /> */}
-            </Grid>            
+              {handleClick && <Button disabled={buttonDisabled} buttonText="SUBMIT" onClick={handleClick} />}
+                       </Grid>            
           </form>
         </Paper>
         </Grid>
